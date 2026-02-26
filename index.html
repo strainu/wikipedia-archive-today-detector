@@ -241,11 +241,11 @@ function executeMassEdit(title, originalWikitext, selectedLinks) {
     return;
   }
 
-  const summary = `Replacing ${replacedCount} archive.today link${replacedCount > 1 ? 's' : ''} with Wayback Machine alternative${replacedCount > 1 ? 's' : ''} per [[WP:ATODAY]] (via [https://github.com/nethahussain/wikipedia-archive-today-detector AT Detector])`;
+  const summary = `Înlocuiesc ${replacedCount} link${replacedCount > 1 ? 'uri' : ''} către archive.today cu echivalentul Wayback Machine (via [https://github.com/strainu/wikipedia-archive-today-detector AT Detector])`;
 
   const form = document.createElement('form');
   form.method = 'POST';
-  form.action = `https://en.wikipedia.org/w/index.php?title=${encodeURIComponent(title)}&action=submit`;
+  form.action = `https://${LANG}.wikipedia.org/w/index.php?title=${encodeURIComponent(title)}&action=submit`;
   form.target = '_blank';
 
   const tbInput = document.createElement('input');
@@ -301,7 +301,7 @@ async function searchCategories(query){
 function buildEditUrl(title,links){
   const n=links.length;
   const summary=`Replacing ${n} archive.today link${n>1?'s':''} with Wayback Machine alternative${n>1?'s':''} per [[WP:ATODAY]]`;
-  return `https://en.wikipedia.org/w/index.php?title=${encodeURIComponent(title)}&action=edit&summary=${encodeURIComponent(summary)}`;
+  return `https://${LANG}.wikipedia.org/w/index.php?title=${encodeURIComponent(title)}&action=edit&summary=${encodeURIComponent(summary)}`;
 }
 
 /* ── Autocomplete Input ── */
@@ -508,7 +508,7 @@ function ResultsView({results,done,showOnlyAffected=false}){
       {display.map((art,i)=>(
         <div key={art.title+i} style={{background:C.card,borderRadius:C.radius,padding:"20px 22px",marginBottom:14,border:`1px solid ${C.cardBorder}`,boxShadow:C.shadow,animation:"_fadeIn .25s ease"}}>
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:8}}>
-            <a href={`https://en.wikipedia.org/wiki/${encodeURIComponent(art.title)}`} target="_blank" rel="noopener noreferrer"
+            <a href={`https://${LANG}.wikipedia.org/wiki/${encodeURIComponent(art.title)}`} target="_blank" rel="noopener noreferrer"
               style={{color:C.text,textDecoration:"none",fontSize:15,fontWeight:600}}
               onMouseEnter={e=>e.currentTarget.style.color=C.accent} onMouseLeave={e=>e.currentTarget.style.color=C.text}>
               {art.title}
