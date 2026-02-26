@@ -300,7 +300,7 @@ async function searchCategories(query){
 
 function buildEditUrl(title,links){
   const n=links.length;
-  const summary=`Replacing ${n} archive.today link${n>1?'s':''} with Wayback Machine alternative${n>1?'s':''} per [[WP:ATODAY]]`;
+  const summary=`Înlocuiesc ${n} link${n > 1 ? 'uri' : ''} către archive.today cu echivalentul Wayback Machine per [[:en:WP:ATODAY]]`;
   return `https://${LANG}.wikipedia.org/w/index.php?title=${encodeURIComponent(title)}&action=edit&summary=${encodeURIComponent(summary)}`;
 }
 
@@ -755,7 +755,7 @@ function App(){
           <span style={{fontSize:12,color:C.accent,letterSpacing:"0.08em",textTransform:"uppercase",fontWeight:700}}>Wikipedia Reference Audit</span>
         </div>
         <h1 style={{fontFamily:C.serif,fontSize:"clamp(22px,3.5vw,32px)",fontWeight:700,margin:"0 0 6px",color:C.text,lineHeight:1.2}}>Archive.today Link Detector</h1>
-        <p style={{color:C.muted,fontSize:13,maxWidth:580,margin:"0 auto 20px",lineHeight:1.55}}>Detect archive.today references in English Wikipedia, find Wayback Machine replacements, and fix them directly.</p>
+        <p style={{color:C.muted,fontSize:13,maxWidth:580,margin:"0 auto 20px",lineHeight:1.55}}>Detect archive.today references in Romanian Wikipedia, find Wayback Machine replacements, and fix them directly.</p>
         <div style={{display:"flex",justifyContent:"center",gap:0,borderTop:`1px solid ${C.cardBorder}`,margin:"0 -20px",padding:"0 20px"}}>
           <TabBtn active={tab==="article"} onClick={()=>setTab("article")}>Article</TabBtn>
           <TabBtn active={tab==="category"} onClick={()=>setTab("category")}>Category</TabBtn>
