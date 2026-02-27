@@ -286,12 +286,12 @@ function executeMassEdit(title, originalWikitext, selectedLinks) {
 }
 
 /* ── Wikipedia search suggestions ── */
-/*async function searchArticles(query){
+async function searchArticles(query){
   if(!query||query.length<2)return[];
   try{const r=await fetch(`https://${LANG}.wikipedia.org/w/api.php?action=opensearch&search=${encodeURIComponent(query)}&limit=8&namespace=0&format=json&origin=*`);
     const d=await r.json();return d[1]||[]}catch{return[]}
-}*/
-async function searchCategories(query) {
+}
+/*async function searchCategories(query) {
   if (!query || query.length < 2) return [];
 
   // Scoatem prefixul Category: dacă există
@@ -314,7 +314,7 @@ async function searchCategories(query) {
   } catch (e) {
     return [];
   }
-}
+}*/
 async function searchCategories(query){
   if(!query||query.length<2)return[];
   const q=query.replace(/^Category:/i,"").replace(/^Categorie:/i,"");
