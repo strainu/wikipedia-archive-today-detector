@@ -29,8 +29,8 @@ const{useState,useCallback,useRef,useEffect}=React;
 const AT_DOMAINS=["archive.today","archive.ph","archive.is","archive.fo","archive.li","archive.vn","archive.md"];
 const AT_RE=new RegExp(`https?:\\/\\/(?:${AT_DOMAINS.map(d=>d.replace(/\./g,"\\.")).join("|")})\\/[^\\s\\]|}<>"]*`,"gi");
 const TOPICS=[
-{id:"medicine",label:"Medicină",icon:"🩺",cats:["Category:Medicină","Category:Diseases and disorders","Category:Medical treatments","Category:Drugs","Category:Epidemiology","Category:Pathology","Category:Medical specialties","Category:Public health","Category:Radiology","Category:Surgery","Category:Pharmacology","Category:Vaccines"]},
-{id:"biology",label:"Biologie",icon:"🧬",cats:["Category:Biologie","Category:Genetics","Category:Molecular biology","Category:Microbiology","Category:Ecology","Category:Botany","Category:Zoology"]},
+{id:"medicine",label:"Medicină",icon:"🩺",cats:["Category:Medicină","Category:Boli","Category:Medici","Category:Medicamente","Category:Epidemiologie","Category:Pathology","Category:Medical specialties","Category:Public health","Category:Radiology","Category:Surgery","Category:Pharmacology","Category:Vaccines"]},
+{id:"biology",label:"Biologie",icon:"🧬",cats:["Category:Biologie","Category:Genetică","Category:Molecular biology","Category:Microbiologie","Category:Ecologie","Category:Botany","Category:Zoology"]},
 {id:"physics",label:"Fizică",icon:"⚛️",cats:["Category:Fizică","Category:Quantum mechanics","Category:Astrophysics","Category:Particle physics","Category:Nuclear physics"]},
 {id:"chemistry",label:"Chimie",icon:"🧪",cats:["Category:Chimie","Category:Chemical elements","Category:Organic chemistry","Category:Biochemistry","Category:Chemical compounds"]},
 {id:"cs",label:"Informatică",icon:"💻",cats:["Category:Informatică","Category:Artificial intelligence","Category:Machine learning","Category:Programming languages","Category:Cryptography","Category:Software","Category:Algorithms"]},
