@@ -286,34 +286,10 @@ function executeMassEdit(title, originalWikitext, selectedLinks) {
 }
 
 /* ── Wikipedia search suggestions ── */
-/*async function searchArticles(query){
+async function searchArticles(query){
   if(!query||query.length<2)return[];
   try{const r=await fetch(`https://${LANG}.wikipedia.org/w/api.php?action=opensearch&search=${encodeURIComponent(query)}&limit=8&namespace=0&format=json&origin=*`);
     const d=await r.json();return d[1]||[]}catch{return[]}
-}*/
-async function searchArticles(query) {
-  if (!query || query.length < 2) return [];
-
-  // Scoatem prefixul Category: dacă există
-
-  try {
-    const url = `https://${LANG}.wikipedia.org/w/api.php` +
-      `?action=query` +
-      `&list=search` +
-      `&srsearch=intitle:${encodeURIComponent(q)}` +
-      `&srnamespace=0` +
-      `&srlimit=100` +
-      `&format=json` +
-      `&origin=*`;
-
-    const r = await fetch(url);
-    const d = await r.json();
-
-    // Extragem titlurile din rezultate
-    return (d.query && d.query.search) ? d.query.search.map(item => item.title) : [];
-  } catch (e) {
-    return [];
-  }
 }
 async function searchCategories(query){
   if(!query||query.length<2)return[];
